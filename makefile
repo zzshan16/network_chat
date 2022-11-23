@@ -2,7 +2,6 @@ default: server client
 server: server.c users.o sockets.h
 	gcc -O2 -g server.c users.o -o server
 client: client.c sockets.h 
-	gcc client.c -g -D_REENTRANT -I/usr/include/SDL2 -L/usr/lib64 -lSDL2 -lSDL2_ttf -o client -O2
+	gcc client.c -g -o client -O2
 users.o: users.c users.h 
-	gcc -c users.c -Wall
-
+	gcc -c users.c
